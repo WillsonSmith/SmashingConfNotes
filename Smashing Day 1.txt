@@ -1,0 +1,645 @@
+GLOWSTICKS
+we made a concert
+with glowsticks
+
+Marcin Wichary
+- Works at medium - typography
+- http://aresluna.org/whistler
+- "the details are not the details - are the design" 
+- detail in typography
+- different dashes and spaces
+- the underline - default is ugly
+- medium is canvas "scrolling"
+- background image wraps around - using for underline
+	- background image with gradient positioned for underline
+- tool to test different languages and settings and whatnot
+- preview fonts by dropping in from finder onto website
+- phonebook font was made for shit paper
+- -moz-osx-font-smoothing: (grayscale) ...
+- quotes in different languages
+- text shadow of background for underlines cutout (may be slow to draw)
+- so many screens and stuff - hard to do underlines for all
+- image of craft vs design
+- "perfect is the enemy of good" 
+- "good is the enemy of perfect"
+- balance is hard
+- little big details
+- Font - Toronto Subway - one of his favourite fonts
+- Q R S - wrote slides to have more because he liked them so much
+- but not perfect - ie. quotes
+- "respect to those who made toronto subway, but I know better" 
+- U+200B - zero width space (break all the things) 
+- He writes articles on typography (should check them out) 
+- he worked on pacman google doodle
+- "remember what's really at stake"
+- fear of being "just another website" disney world vs behind the scenes
+- Status Quo - Better - Even Better Still
+- bad              - is fine - might be bad
+- it is okay to be "better" - weighing benefits 
+- you mightw ant to go to mars - not possible - but you got to moon
+- @mwichary
+ 
+Susan Robertson
+Style Guides: Why bother?
+- what, why, how incorportated, different guides, maintenance, & resources
+- 24 Ways, Anna Debenham (style guides)
+- starbucks styleguide & a bunch more - is important
+- How she defines a style guide:
+	- not a brand guideline
+	- living document - sit in codebase somewhere - easily accessible
+	- hooked into main application code
+- wait whats a pattern library?
+	- style guides more broad - incorprate more
+	- can have stuff about brand
+	- pattern lib more narrow - more fully formed framework
+- talking about code style guides
+	- that helps build front end and keep clean
+- why?
+	- (if going to be more work)
+	- its going to be a reference for the whole team (!!!)
+		- same names for everything - easy to reference
+	- Document your intent - what they are to be used for (!!!)
+		- when to use what (ie. buttons for X or Y)
+- Document variables - different colours etc. keep all in one space
+	- very useful - everyone knows what colour is what hex value and for what
+	- maybe also CMYK and stuff for print designs
+- Good for quick tests across browser
+- keeps css files smaller - using same things multiple times
+- Fast build outs - someone else (who hasn't touched project) can easily jump in and write using same code
+- Good deliverable for client (!!!) - show patterns, not templates
+- First step in development
+- Workflows
+	- waterfall
+		- take visual inventory
+		- all headings, buttons, body copy etc they've used. 
+		- notice any discrepancies - any differences should be addressed
+		- Then ASK the designer - why 200 headers? about discrepancies
+		- Push for smaller codebase
+		- Then BUILD - put it on page, not about beauty, but documenting
+		- Modular code
+			- templates build quickly then can get on board
+		- Design development
+		- "I want 16 headings" but seeing together might change mind
+	- What if something is already built and no styleguide?
+	- Editorially was like this
+	- Create style guides to learn
+	- Change as application does
+	- filament groups xray html
+	- use to make prototypes
+	- https://github.com/Editorially/styleguide
+	- CSS Audit - see what is unused
+	- Ugly is okay for your styleguide - just need to show the things
+	- just need to be useful for you and your team
+- Use styleguide to check changes
+- Did we catch everything? - cover all the pieces? 
+- Specific styleguides
+	- for a page, section, etc.
+- At FiftyThree
+- blog.typekit.com/2014/10/22/creating-a-type-style-guide
+- Eliminated a lot of lines of code
+- Maintenance
+	- no silver bullet - every team is different
+	- Here are some options
+	- Simpler visual index that links back to the styleguide
+	- ianfeather.co.uk/a-maintainable-style-guide
+		- automated styleguides
+	- "use a tool" - KSS/Hologram or...
+	- drawback to tools: markup in comments above styles
+		- what happens if markup changes 
+	- A champion (?) - one person to maintain the styleguide
+		- Risk - "champion" leaves and nobody continues maintenance
+	- UX review team
+	- Make it part of your workflow
+	- Use for feature development
+	- Use it to test design changes (!!!)
+Resources
+- styleguides.io
+	- important links for things to read
+- Benefits worth the upfront time
+- Ugly is okay - worry about usefulness
+
+Yoav Weiss
+Responsive Images
+- Responsive images problem
+	- efficiently load properly dimensioned images that fit the page's design
+- Problem with "bloated" responsive is serving same resources
+	- Images - large
+- data plan abuse
+- wasted time
+- people demanded solution
+- RICG and <picture> proposal
+- Picture AND srcset
+	- browsers not convinced
+syntax
+- srcset "x" part
+- load hi-res images on hi-res devices
+- <img src="1x.jpg" srcset="2x.jpg 2x. 2.6x.jpg 2.6x" alt="a giraffe">
+- browser chooses image that it sees fit
+- the <picture> part
+- use case - art direction
+- viewport size
+- different images for different sizes - not just resized
+<picture>
+	<source media="(min-width:45em)" srcset="large.jpg">
+	<source media="(min-width: 18em)" srcset="medium.jpg">
+	...
+	<img src="small.jpg" alt="the president.">
+</picture>
+- Use case #2 - MIME type fallback
+- jpegXR, WebP, etc. - things not supported in all browsers but may be best suited
+<picture>
+	<source type="image/webp">
+	...
+	<img src=...>
+</picture>
+- Sizes + srcset 'w' descriptor part
+- use case - variable width images
+- example: single column images on a phone larger than 2 column on a tablet
+- give browser list of resources - let browser choose what it sees fit
+- give sizes attribute to tell browser what to do
+	- because browser needs to start downloading before layout is in place
+	- so needs hint as to what size image to put in
+- default sizes is 100vw (100% viewport width)
+<img src="x.jpg" sizes="44vw" srcset="x200.jpx 200w ... >
+- Separation of concerns
+- mixing display information in markup (as opposed to css)
+	- is because browser needs the information so it knows what to do
+	- can't wait for css before doing this
+- "sizes" is an optimization
+- mix and match use cases- all syntaxes work together
+- support
+- Chrome and Opera have shipped
+- Firefox implemented but behind flag - still bugs to work out
+- IE have announced working on srcset x version considering adding others after
+- Safari - srcset x has shipped in safari 8 - w and sizes in webkit but not shipped in safari
+- picture not there - infrastructure issues 
+- Usage has gone up significantly since ship
+	- srcset 'x' way up
+- To picturefill or... 
+	- can use with or without it
+	- because picture has fallback on img anyways
+	- but gives support to other browsers
+- picture or srcset
+	- art direction: picture
+	- most cases srcset is good enough - gives browser all it needs and lets browser do the hard work
+	- Remember - source order matters
+	- large before small in min width
+	- also for syntax of sizes
+	- first pick algorithm
+- Styling - nothing should change
+	- "Picture is a magical span... " tab atkins
+	- alt text still on img tag
+		- no way to do different text per image
+	- Future compat feature detection
+		- HTMLImageElement.sizes
+		- HTMLImageElement.currentSrc
+- The path not (yet) taken
+	- Client hints (server side solution) 
+	- client sends dpi to server - server does work & sends right image
+	- no consensus among browser vendors if this is right way to go
+	- possibly never to happen - programmers don't always have access
+- To sum up
+	- Responsive images are HERE
+- Want to get to 1% usage by end of month
+- Start with srcset
+- The web is ours - we need to work with browser vendors to implement things
+- spec on image selection is vague to eventually allow for image selection based on connection or user settings
+ 
+Marcy Sutton
+A web for everybody
+Accessibility
+- What if you couldn't:
+	- do ski ballet
+	- use a mouse
+	- see the screen
+	- perceive colours
+	- hear audio content
+	???
+bit.ly/smashingconf
+- Challenge assumptions
+- Accessible UIs - text alternatives
+- Web components (seem like futureeee)
+- Resources
+- Assumptions about users
+	- "not my audience"
+	- "prototype - doesn't need to be accessible"
+	- not true
+	- Disabled people cook, travel, work out, drink whiskey, take pictures
+	- Disabled people are early adopters
+		- if make accessible - they will line up
+		- can be a lifeline to someone with a disability
+	- Include accessibility from the start (its easier!) 
+	- You get to say what a good accessible experience is
+	- "When we learn how to make the web, we need to learn how to do it right"
+	- "interactive means something" - cursor:pointer; (is this accessible by keyboard? a <li> is not interactive by default
+- Enable they keybaord!
+	- div is not accessible - button is (keyboard access)
+- ng-click AND ng-keypress for keyboard accessibility
+- if is not a button - add tabindex - also needs above click AND keypress
+- role="button" (aria)
+- "Semantic" means something
+- what is the markup doing? html5 <details> and <summary> 
+- Start with semantic elements! don't build your own button - use a button! 
+- Adding semantics to components
+	- use native elements
+	- Add ARIA attributes
+	- **Extend** native elements*
+	- Core components of aria
+		- Roles
+			- what does this thing do
+			- <div role="img" style="background-image...>
+			- perhaps not the best approach - but helps make existing things accessible 
+		- States
+			- Current condition of the particular thing
+			- aria-disabled="true"
+		- Properties
+			- aria-label="subscribe"
+				- checkbox will read name (for custom checkboxes
+- possible to use too much aria
+- use the simplest abstraction possible
+- look at spec for aria attribute when you want to use it
+- Virgin america website - lol wat is accessibility
+- Recorded demo of voiceover
+- make sure to change keyboard focus if you're moving things around
+- add focus style next to hover on anchor
+- A11y (accessible) demo of (simplified) virgin america site
+- differentiate links with alt text
+- Handling focus:
+	- watch for airport change
+	- when choose - scroll - send focus 
+- aria-live
+- When sort - send focus back
+	- sort will rerender - and lose focus
+- Web components - use native element and add an is=""... to extend
+- Web components are p bad right now - nobody thinks of accessibility
+- make sure you show selection in the markup - CSS is only for visual
+- role="..." not aria-role="..."
+- Web Components
+	- Reusable widgets of your dreams
+	- custom elements
+	- encapsulation
+	- reinventing the web
+		- but has become "div soup" - just divs in divs in divs
+		- not responsible creation
+		- dependency hell 
+- Is your element accessible?
+	- can you use with keyboard only
+	- can you use with screen ready
+	- without sound?
+	- without colour?
+	- ...
+- aria-activedescendant="ID"
+- Testing tools
+	- your keyboard
+	- voiceover
+	- talkback (android)
+	- JAWS, WindowEyes, NVDA
+	- virtual box
+	- Modern.ie windows VMs
+	- Chrome Accessibility Dev Tools
+	- Resources
+		- Using ARIA in HTML
+		- providing text alternaties
+		- WebAIM Screen Reader Survey
+		- ...
+- It's up to us to make the web more accessible 
+
+Jenn Lukas
+The Developer's Ampersandwich
+- cookinsidethebox.com
+- Sturdy bottom bun
+	- Developers love formulas
+- based on constraints of web safe fonts
+- Helvetica not a web safe font
+- safer place with web fonts (?)
+- A list apart the latest in web font trends
+- chrome extension: whatfont?
+-The Cheese
+	- general styles
+	- make sure no html element goes unstyled
+	- github.com/jenn/starter-files
+	- Web fonts burger
+		- web fonts changed everything
+		- cross-browser differences
+		- Set aside the TIME and BUDGET for thorough QA testing
+			- designers and developers
+		- Fonts in PSDs may look nice - not so good in the web
+		- use analytics to find out what browsers people are using
+		- monitor how fonts affect page speed
+		- "Working with designers who believe that just because you can now use web fonts..."
+		- "just because I CAN do something, should I?"
+- Fallback fonts on mobile devices
+	Jordan Moore
+- load web fonts in media queries
+- FFFFallback - easy way to have discussion about
+- Will the cost be approved?
+- our job to explain to client why is an added benefit
+- Free fonts have come a long way
+- https://www.theleagueofmoveabletype.com
+- http://hellohappy.org/beautiful-web-type/
+- icon fonts bacon
+	- size, colour, shadow
+	- great for retina 
+	- can make your own
+- SVG "OMGSVGFTW"
+- Accessilettuce
+- aria-hidden on icons
+- Contrast ratio of 4.5:1
+- webaim contrast checker
+	- chrome accessibility audit
+- environmental media features (?)
+	- light levels etc
+- 45-75 character length for line
+- http://typecast.com
+	- good to work with designers
+- Identify pain points
+	- what happens when the content gets longer/shorter
+	- THE WEB IS NOT PRINT
+	- fluid
+- use -webkit-font-smoothing: antialiased; carefully
+- sometimes "fixing" something in one browsers can make it difficult in others
+- consider "fixes" and make sure are important for website
+- Choose a product with a good tract record
+- limit your font sizes
+	- create a system
+	- audit type styles
+		- 9px
+		- 10px
+		- 11px
+		- ... 
+		- ...
+		- too many...
+		- ...
+		- plz...
+		- plz stop...
+- Share all the knowledge
+- QA
+	- schedule internal design reviews with WHOLE TEAM
+	- make sure will work with browsers
+		- in analytics
+- CSS preprocessors as friends
+	- then designers can update variables
+	- use a spreadsheet if not comfortable with code
+ 
+Zach Leatherman
+Better @font-face with font load events
+- @font-face
+	- 45% of the top 1000 websites (usage)
+	- avg 68K of payload
+	- not a horrible size compared to other items
+		- BUT
+	- not all requests are created equal
+	- effect on PERCEIVED performance
+	  non-blocking		blocking
+	  Images			javascript
+	  				CSS
+					web fonts
+	- @font-face 1997
+	- David Hasselwoff (ha)
+	-  WOFF + OTF
+- font-feature-setting MDN
+- state of web type Bram Stein
+- WOFF2 30% smaller than WOFF
+	- put it at the beginning
+	- web browser picks first
+- 2 kinds of icon font
+- supplemental and standalone
+- supplemental will also have descriptive text
+- standalone - if they don't load you're screwed
+- SVG fonts removed from SVG spec
+	- removed from chrome
+	- Never supported in IE or firefox
+- woff2, woff, otf (or ttf)
+- remember - if font isn't used, its not downloaded	
+- create element in js
+	- set font style
+	- then inject (will initiate download)
+- font-family with unicode-range
+	- example: swap out an ampersand
+	- not supported in firefox
+- always subset fonts when using unicode range
+	- only have ampersand character in your font file
+	- otherwise firefox will apply all glyphs to all the content
+	- font squirrel can do this
+- watch out for FOIT (flash of invisible text)
+- Chrome and firefox 3 second timeout for fonts
+- Flash of Unstyled Text
+	- IE - 0 second timeout - fallback immediately
+	- when webfont loads - pops in
+- Icon Fonts
+	- FOUT on icon fonts will show fallback icon font [] on chrome&safari
+	- person on mobile safari
+- FOIT good for icon fonts
+- FOUT bad for icon fonts
+	- private use area avoids this problem
+- stop button doesn't show fallback text
+- Let's fix stuff
+- Need more control of FOIT & FOUT
+- css font loading api (chrome & opera)
+- doc.fonts.load("1em Raleway").then(function() { ... });
+- when font loads - assign new font family
+- fontfaceonload
+- Standardises behaviour
+- content fonts - embrace FOUT
+- font-rendering css property
+- github.com/KenjiBaheux/css-font-rendering
+- font-rendering: block 0s swap infinite;
+- fallback for hamburger menu with FOUT
+	- Menu -> =
+- x2261 unicode is like a hamburger menu - is mathematical operator
+	- but screen reader will read as "identical to"
+	- use aria-hidden
+	- keep accessibility text
+- http://unicode.johnholtripley.co.uk
+- Content fonts and icon fonts have vastly different desired behaviour
+ 
+Stephen Hay
+Easing the pain of designing in the browser
+- I "don't hate photoshop - most effective way to show clients what their site will never look like"
+- "we're not going to use photoshop for comp - we're going to use markers"
+- "Designing in the browser doesn't mean designing IN the browser"
+	- is making COMPS in browser
+- most important reason: all the devices
+- becomes unmanageable and hard to make changes
+- Pain points (designers have difficulty with it)
+	- faster & more comfortable in photoshop
+- You weren't born knowing photoshop
+- "I don't see the creativity in code"
+- SKETCH (!!!)
+- People think about layout too much
+- One of the biggest problems we have with designing in the browser is that many designers think about layout first (!!!)
+- We need to think about structured content first (!!!)
+- HTML is nothing but structured content
+- Take actual content, structured with HTML, and start building upon it, incrementally, cumulatively. That is the way of progressive enhancement, and it's the nature of the web.
+- CSS is not ideal, but it's what we have
+- Unstyled HTML has benefits
+- Because of the focus on content and structure, irrelevant or inappropriate content is easy to spot. 
+- don't focus on containers
+- **focus on the small screen first  **
+- You're ALWAYS going to have a small screen
+- you're going to have to do it anyways
+- use tools to sketch in code
+- Sketch before coding
+	- colour
+	- padding
+	- margin
+		- start with easy things
+	- before that > sketch
+- **Expand your browser window until your design looks like shit. Time for a breakpoint**
+Designing mobile first - every larger breakpoint will have slightly less code
+SKETCH
+- Show screenshots of your comps made in the browser
+	- after getting feedback, make changes and THEN show them it in the browser
+
+John Allsopp
+The Web's Future is Offline
+- Offline first
+- The web can work offline
+- the web and internet are different
+- the web doesn't need the internet
+- We can't keep building apps with the desktop mindset of permanent, fast connectivity, where a temporary disconnection or slow service is regarded as a problem and communicated as an error
+- We'll cover:
+	- taking your application offline
+	- persisting data in the browser
+	- are we online? (this is part of the user context, it's important)
+- Making your application work offline with the application cache
+- Browsers cache HTML, CSS, Javascript
+- however we don't know when the browser may discard it
+- with html5 appcache we can control it
+- appcache is NOT to improve performance of websites
+- it is for APPLICATIONs - install an application in the browser
+- how to make it work
+	1. create a manifest
+	2. link from HTML
+	3. beware the genie's rules
+- the cache section
+- the network section
+- tell browser what to NEVER cache
+- will always fetch them
+	- * will fetch ANYTHING not specified to cache
+- the fallback section
+	- a fallback resource
+- in html element add manifest attribute w/ link to manifest
+- Genie's rules
+- Persistence
+- to ensure update - must update appcache file
+- user must visit twice to get new content
+- theres a reason
+- first visit: browser sees there's a manifest, creates appcache
+- next visit: browser has appcache, renders the page using cached resources browser **then**checks to see whether the manifest has changed...
+- user has been USING the page - should it refresh right after it got it? even though user is using?
+- possible to listen on window.applicationCache for whether there's a new cache updateready
+- can respond to that
+- force user to update
+- resources must be EXPLICITLY cached
+- Master Entries (is an exception to above) 
+- because it was a pain in using it the way it wasn't designed for - we avoid using it for what it WAS for
+- listen for error events on the window.applicationCache and send these errors to the server (is a very bad thing)
+- if a resource not listed in CACHE section
+- AND is not listed (explicitly or partial match)
+- then the browser treats as ...
+- App cache
+- does work
+- is not a douche
+- is a pain in the ass
+- has quirks
+- avoid using for performance reasons
+- is amazing when used appropriately for applications
+- A database in the browser?
+- sessionStorage and localStorage
+	- remember - is synchronous 
+	- remember 5MB limit/domain
+- IndexDB
+	- pouchdb
+	- async
+- Responding to network status
+- may want to handle user input differently
+- navigator.onLine
+	- boolean
+- online/offline events
+	- window.addEventListener("online"...
+	- window.addEventListener("offline"...
+	- catch
+	- online == false or offline event - definitely offline
+	- File API
+	- What's next?
+	- Service Workers! (yay)
+	- Proxy server in the browser
+	- event handlers in javascript to intercept traffic
+	- offline web is a reality today! 
+	- allows us to do new things with the web
+	- benefits for even simple websites
+		- keep local preferences
+	- http://www.webdirections.org/offlineworkshop/ibooksDraft.pdf
+
+Dave Shea
+Rolling your own CSS Methodology
+- CSS is Simple! (famous last words)
+- bloated codebase from no CSS structure & multiple contributors
+- Development friction
+	- scary to go back and change
+- What's a CSS methodology?
+	- syntax and how you define that
+- It's easy to ignore existing code when you don't have conventions to follow
+- modularity
+- avoid specificity battles
+- team wide consistency
+- In Argon (their methodology) 
+	- style everything with a class
+	- what's powerful about it: markup doesn't matter can keep semantic separate from presentation
+	- exceptions: pseudo selectors ::before ::after :first-child :last-child
+	- not nth-child (too specific)
+	- not entirely everything a class
+	- going to keep a very basic style for your core elements
+	- no ID styling
+		- not good for modularity
+		- also specificity problem
+		- just replace them with a class
+	- don't over-select (!!!)
+		- too much nesting is bad
+	- and of course no use of !important, ever
+	- anatomy of a selector (for argon)
+		- name things for meaning for DEVELOPERS 
+			- not important to end users
+		- using **.class.-modifier** as a modifier - always attached to something else
+		- should flatten to BEM selectors
+		- using modifiers means nesting (SASS) makes sense & is clear about its function
+		- Exceptions:
+			- Javascript and CSS overlap
+			- javascript reserved classes
+				- can ONLY be operated on my javascript
+				- NEVER style them
+				- sandbox your javascript classes
+			-State classes 
+				- hidden or visible
+					- no tie in for format or layout
+	- Rollout
+		- New features only
+			- applied to new things only for all Argon items
+		- But, the design changed (company rebranding)
+			- just keep moving forward - update piece by piece
+	- Outcome
+		- no real specificity battles anymore
+	- **Need great docs**
+		- keep ideas in order
+- this approach forces thought
+- leads to quick code reviews
+	- things become immediately obvious when they aren't right because you have a standard
+- Testable?
+	- eyeball tests - point to style guide. Does this look right? Standard means you can quickly see what looks wrong.
+- Debugging
+- Over-reliance on modifiers
+- Ideally 1-2 modifiers per component
+- File sizes?
+	- didn't really reduce with argon
+- Only works for controlled systems
+	- naming conventions may not be accessible elsewhere
+- Code reviews
+- The big breakthrough
+	- it's not about the syntax
+		- its about the **discipline** 
+		- stick to that syntax
+		- work with syntax
+- **Favour shipping**
+- make sure what you're doing is in favour of your company's goals
+- Every project? no
