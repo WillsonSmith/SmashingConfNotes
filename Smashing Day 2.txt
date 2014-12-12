@@ -1,0 +1,756 @@
+Mystery Speaker! It's Johnathan Snook.
+sorry. snoovk (haha) (first smashing conf was a typo in his name)
+Becoming a deep generalist 
+"how I became a know it all"
+four temperaments
+"Luck is... what happens when preparedness meets opportunity." 
+"Any time I became 'known' for something, I changed."
+"... and that worked out really well." 
+"Empathy through experience." 
+"It's about building you, the person you are."
+"Don't grow up to be a specialist" - Jonathan Rosenberg, SVP of products at Google
+"Diversity is your best defence against myopia." - Jonathan Rosenberg, SVP of products at Google
+
+Brad Frost(y)
+Atomic Design
+- Notion of pages has been baked into the web since the beginning (pages like a book)
+- "How much for X pages"
+- "how long is the home page going to take"
+- Diversity of devices now though
+	- notion of page doesn't work anymore
+- "Used to seeing static comps - we need to show them what it looks like on."
+- Waste of time for talented designers
+- we need to blow this idea up, the idea of a page
+- what is an interface made of? what are our lego bricks?
+bradfrost.github.com/this-is-responsive/patterns.html
+- "Design systems, not pages." 
+- Bootstrap, zurb etc are great but..
+	- everything looks the same
+	- one size does not fit all
+	- not everyone should do the same thing
+- "given enough time we just solve fashion"
+- Framework potential pitfalls
+	- Lookalike issues
+	- bloat/unneeded stuff
+- "Tiny Bootstraps, for every client" - Dave Rupert
+	- custom tailored for your clients needs
+	- this isn't bootstrap, it's YOUR bootstrap
+- benefits of front end style guides
+	- promote consistency
+	- easier to test
+	- better workflow
+	- creates a shared vocabulary
+		- everyone knows what you're talking about when you say "Horizontal tabs"
+	- useful reference
+- Starbucks styleguide
+- "These are absolutely the way we should be creating designs in 2014+"
+- "Mo' patterns, mo' problems"
+	- time consuming
+	- treated as auxiliary project
+	- often too abstract
+	- often only seen as designer or developer tool
+	- often created after project launches
+	- often incomplete/only serving present cases
+	- lack of clear methodology
+- Atomic Design
+- Chemistry parallel to design
+	- Atoms basic building blocks, can't be broken down without losing meaning
+		- abstract concept
+	- combine to form molecules & make unique properties
+	- then simple organisms
+	- ...
+	- ...
+	- everything in universe is make of fundamentals
+	- the web is like this
+		- periodic table of html elements
+- Atoms > molecules > organisms > templates > pages
+- are all in parallel
+	- not a linear process
+- Atoms
+	- HTML elements
+		- label, input, button
+		- not terribly useful on own
+- Molecule
+	- combine atoms
+	- gives meaning to multiple atoms
+- Organism
+	- give molecule a context
+	- put search into a header
+	- a tweet
+- Have to leave analogy behind at templates
+	- move to "templates"
+- Templates
+	- put in context of something that resembles a web page
+	- focus on content structure - not final outcome
+	- Mark Boulton quote on creating good experiences from content structure, not just the content
+- Pages
+	- put real **representative** content
+	- this is what is going to be signed off on and approved
+	- Consider the part and the whole simultaneously
+	- This is where you test design tweaks - adding pieces etc.
+		- example: alerts on page
+- Abstract ------> Concrete
+- Creators ------> Clients
+- Atoms as a reference
+	- build molecules, organisms, templates
+	- review at pages level
+- "Modularity matters a hell of a lot more now"
+	- keep things modular
+	- create the parts and then assemble the product
+- Pattern Lab
+- What is it?
+	- static site generator
+	- A design system builder
+	- your comprehensive custom component library
+	- A pattern starter kit
+	- design toolkit (viewport resizer etc)
+- What it isn't
+	- a ui framework
+	- you still need to style everything and do all the work
+	- not dependant on workflow
+	- not very rigid
+		- can change things as you want
+	- "Just" a pattern library, but also not a production-ready tool
+		- can use parts
+		- not going to use in production
+	- At the molecules level
+		- build common patterns that will be used in multiple pages
+	- Organism level
+	- Everything is a nested include
+		- this helps drive home that you are assembling parts to form the whole
+	- "On whatever project you're working on - people love Beyoncé"
+		- automatic approval
+- Account for content right out of the gate
+	- no more content fitting just right
+- Switch off modules
+	- account for different variations without duplicating efforts
+- Ish - gives you a small-ish screen
+	- do not set breakpoints based on devices
+	- abstract things - think about content and whole spectrum as opposed to just special devices
+- if the client can click small and not notice its a different size every time, mission accomplished
+- Roll design thinking into interface design system - see it in work
+- annotations in context in pattern lab (!!!)
+- Lineage
+	- here are the patterns this consists of
+	- this is also included in the following patterns
+- New version of pattern lab coming soon
+- http://patternlab.io
+- "What's the hardest aspect of responsive web design?"
+	-Design/development OR Process/people
+		- 121 votes			533 votes
+- "People are weird and complicated"
+- Set Expectations
+	- reviewing design by printing out and writing in the margins is not god
+- "Death to the waterfall"
+	- waterfall process is not a good thing
+	- needs to be more tightly knit
+- http://bradfrost.com/blog/post/development-is-design/
+- At the beginning yes wireframes
+	- doesn't mean visual designer and developer can't get started
+- Gather mode
+- http://stylifyme.com
+	- put in URL
+	- will give you hex values and type values etc
+	- gives a rough style guide - p decent
+- Interface inventory
+	- Well worth the time
+	- to do good work - you need to know what you're working with
+	- instead of document content
+		- document interface on your site
+	- Round up your patterns
+	- by doing this you can see consistency or inconsistency in your site
+- helps establish a **scope of work**
+- Inventory
+	- document interface
+	- point out inconsistency
+	- promote consistency
+	- establish scope of work
+	- establish common vocabulary
+	- lay groundwork for a future style guide/pattern library
+- Establish Direction
+- A preschool student doing amazing design sketches
+	- As humorous as this was - it shows its a good way to get ideas across
+- Low fidelity plans with sketching
+- If your developers aren't working from day one - it's a problem
+	- start building things you know will be in it
+		- mark up your forms etc
+- Element collages
+	- potential things that might exist on the site
+- Start with placeholder wireframe-y websites
+- over time build up fidelity
+- Bring it into the browser and iterate on it
+- http://trentwalton.com/2011/07/14/content-choreography
+- Build up fidelity over time (!!!)
+	- don't try to build everything at once
+	- its like a sculpture
+		- start taking passes over the block and eventually get to more detail
+- May not be an "Agile" process
+- Collaboration and communication
+- should trump deliverables
+- use whatever tools you need to get your point across
+- "When you're finished changing - you're finished" -Benjamin Franklin
+
+Lyza D. Gardner
+Soothing Web Weariness
+by doing as little as possible
+- We're not building the mobile web, but THE web
+- A > B* (if everything goes perfect) 
+- "We have a firehose of information every day"
+	- so many things 
+	- how do we reduce the information etc.
+- Reduce payload
+	- mobile web can't handle a lot of requests, large files etc.
+	- rendering to much
+	- hardware demands 
+	- heavy demands on limited client resources
+- The mobile web gives constraints
+	- reminder of the old web when there were constraints by tech
+- Photography 
+	- film - constraints
+	- digital - constraints removed
+	- but then there are a million options
+		- lose track of the core enjoyment of photography
+		- overwhelming
+- Reintroduce constraints to make it more fun or less overwhelming
+	- slow down and think
+- "Constraints are not necessarily an opposing force"
+- Address "econobox" deliverables before the stretch limo
+	- constraints
+- Find your core focus
+	- evaluate it with constraints
+- "Overchoice" - Alvin Toffler
+- Core functionality available to everyone
+	- let everyone perform the task your product is for
+- "Keep it simple, stupid" - Clarence "Kelly" Johnson
+- Kelly's 14 rules
+	- centred around flexibility and keeping things simple
+- alleged 15th rule
+	- sounds like someone burned out
+- We only have so much fuel (motivation)
+	- don't run out
+	- we have to think all day
+	- this takes energy
+- "Avoid accepting complexity as the status quo"
+- As we run out of energy we start doubting ourselves and accelerate the loss of energy
+- Stop treating our sites like clown cars
+	- stop cramming everything in
+	- its janky
+	- should be quieter
+- be mindful of things we are adding into our projects
+- Iterative, Minimal, Modular
+- 2001 a Space Odyssey - monoliths are source of all evil
+	- keep it modular
+	- in pieces
+- The Extensible Web Manifesto
+- https://extensiblewebmanifesto.org
+- Take the leap
+- **read some specs**
+- "oh my god my clients will never think this way..."
+	- have you tried?
+	- or are you so certain it will fail you won't even try
+	- As you take away their apples you are giving them some juicy apples
+		- Explain why you're doing something
+		- why it's better
+		- why it will help in the long run
+		- **namedrop successful projects**
+- Being a good communicator is extremely important
+- make careful deeply thought objectives
+	- set out your core goals
+- Identifying the core functionality
+	- pattern libraries help decompose things
+
+Patrick Hamann
+Building the next-generation of theguardian.com
+- http://next.theguardian.com
+- they HAD an "m dot" domain
+- why important to go responsive?
+- wasn't fit for purpose
+- 115 million users
+- current system wasn't designed for scale
+- over 7000 **unique** devices per month
+- each device has unique features screens UAs etc
+- Needed a better solution
+- New site ~5seconds Old site 12 seconds
+- each new feature must adhere to rules
+- what can we enforce on this project
+- Build modular, decoupled systems - not sites
+	- we need to move away from static design tools
+	- content strategy
+	- turn visitors into readers and visits into journeys
+	- "how to maintain content strategy across breakpoints?"
+		- must have consistency on content level
+	- "you think you're redesigning the website, but actually you're redesigning the news room."
+	- started with content
+	- break page down into a series of containers
+		- can interchange containers
+		- they are self sufficient and can be dropped anywhere (!!!)
+	- Conway's Law
+		- "Organisations which design systems... are constrained to produce designs which are copies of the communication structures of these organisations". 
+	- Container model blended with content
+	- mix in with headlines or highlights container, or in depth if you have time
+	- break through Conway's law
+	- containers are constructive content
+	- [item] put together with other things
+	- [item][2][3] combined to create slice
+	- then container
+	- item > slice > container
+	- Modularity means you only have to build a few things to assemble many
+	- how to break down even further?
+		- create a naming convention
+		- break down barrier between designers and developers
+			- everyone knows what they are called
+	- use preprocessors to break naming conventions into more detailed classes
+		- turn "fsheader" to "something_header_somethng_something"
+	- break it down to be simple - maybe you can even get designers writing code
+- Design features for **access first**, agnostic of devices
+	- they had 7000 **unique** devices
+	- access first
+	- core content
+	- what are users coming for
+	- Scott Jehl - responsible responsive web design
+		- http://www.abookapart.com/products/responsible-responsive-design
+	- ALL of your users are users without javascript enabled as they wait for it to load
+	- create common baseline
+		- always deliver content first
+		- base on features - not device
+			- if it doesn't support feature then don't do
+	- avoid single point of failure
+		- serve content as soon as possible
+		- isolate content from delivery of anything else
+	- Fault tolerant system
+		- if comments fail
+			- can still read news
+		- add in comments with javascript
+			- if they fail - won't break page
+	- Images
+		- Not every image on your site should bear the same weight as other images
+		- main images higher quality (90%)
+		- do images need to be in the DOM on page load? Same quality percent (70%)?
+		- Images ALSO progressive enhancement 
+		- use placeholder images
+			- don't keep image in DOM
+			- load in after
+		- convey **tone** and **importance** with varying images
+		- load in important images with the DOM
+			- load extras in with javascript and progressive enhancement
+- Embrace Unpredictability
+	- By embracing this you are creating resilience 
+	- Progressive enhancement is as much about resilience as it is about inclusiveness - @bradwright 
+	- CSS **IS** your critical path
+	- What is our critical CSS
+	- The user came to read the news
+		- should be inlined
+		- everything else is blocking that
+	- inline critical CSS in header to get it in the first packet, the initial round trip to the server
+	- Perception is more important than actual speed
+		- increasing perception  makes it feel faster
+	- trick browser  by requesting with ajax
+	- cache it in localstorage
+		- **cache css in localstorage** -  clever
+	- create resilient systems
+	- ngxpagespeed.com
+	- addy osmani critical
+	- penthouse
+	- filamentgroup loadcss
+	- can also be applied to fonts
+		- "waiting for fonts..."
+		- cache then
+	- This is sort of a hack
+		- what does the future hold?
+	- http/2
+		- going to change everything
+		- "Server push"
+		- when user asks for html
+			- you know what the next request is
+				- send at same time
+		- can now have multiple bidirectional concurrent messaging over the same TCP connection
+			- less latency
+	- **ServiceWorker**
+		- no longer can we think of relying on network stack
+		- how are they going to survive in offline world
+		- with great power comes great responsibility
+			- does not negate need for HTTP cache (!!!)
+- Every feature must be **measurable**
+	- Measure everything
+	- "If it moves, graph it! and if it doesn't move, graph it anyways in case it does." 
+	- take accountability of all new features
+	- have times where the only thing you're allowed to do is delete code (!!!)
+	- window.performance.timing
+	- Metrics are important
+		- choose the right metric
+		- what are the core APIs
+		- how long for user to click buy button
+	- Also pair user data with synthetic
+		- compare to competitors
+		- keep baselines in check - match budgets
+	- Create a culture of performance in your organisation (!!!)
+	- What does the future hold?
+		- Resource timing
+		- Beacon API
+		- All analytics come at a cost
+	- Identify core metrics for YOUR applications
+- Lessons:
+	- design is not a service. designers have to sit in the team. (!!!)
+	- the network is intrinsically unreliable, defend against it
+	- deliver core content first, progressively enhance the extras
+	- exercise performance budget. measure, optimize, and repeat
+
+Val Head
+All the Right Moves: Putting Your UIs in Motion
+- transforms, transitions, and keyframe animations
+- transforms
+	- yoga of css
+	- bends to all sorts of crazy positions
+	- insta-3d rotateX(20deg);
+	- A to B
+- transitions
+- keyframes
+	- @keyframe slideUp {
+		0% {}
+		50% {}
+		...
+	}
+	- animation: slideUp .6s ease-out forwards;
+	- @keyframes fadeIn {
+		from: {opacity: 0;}
+		to: ...
+	}
+	- whoa we can use this on things that aren't cats? I don't believe you
+	- Stripe using CSS animations to make their payments feel modern
+	- we want helpful animation
+	- help overall experience
+	- 3 categories animation helps with
+		- show structure
+		- relationships
+		- cause and effect
+	- Animation establishes location
+		- little bit extra makes it look more sophisticated
+	- animations help guide
+		- example: flipping a card
+			- instead of just jumping to different info - guide to it
+	- Animation Guides tasks
+		- enter and exit animations
+		- fade colour to see age
+			- when brand new - blue
+				- slowly fade to grey
+		- Google plus putting friends into groups animation
+		- Guided task doesn't have to be serious all the time
+			- "readme" owl follows you as you go through form inputs
+			- its fun - effective
+- Animation Demonstrates
+	- Quick animations can show you what to do
+		- mailchimp
+		- how a product works
+		- shorter than a text description
+	- If you don't have a lot of content it can be good to explain what you do
+		- attract attention
+- Animation gets (all the) attention
+	- fitbit uses to show your information
+	- they animate JUST your data
+- Adding animating with style
+- Keep interface animations flexible
+- you can't assume anyone is going to wait for your transitions
+- don't make people wait for things
+- prototype the crap out of all your animation ideas
+	- get it on screen
+	- get it somewhere you can talk through all the steps
+	- get it where you can use it
+- the faster you get it to a point yo can try it out, the faster you can iterate on it
+- Speed is more than numbers
+- the secret to animation is timing
+- somewhere between .2s and .6s is a good place for small UI animations
+- duration and easing combined give us the overall timing
+- ease-outs feel more "responsive"
+	- start fast, slow down at end
+		- feels like a more immediate response
+- Complex easing needs more time to be readable
+	- ease bounce at the same time as ease-out feels broken
+	- you have to think about what happened with complex easing
+- Match motion to your message
+- moving from here to there is less important than **how** it moves
+- motion for the sake of motion is not necessary
+- Your choice of easing makes all the difference
+- Think of it as a stage, not as a page
+	- don't make things exit and come back
+	- if you were on stage in two scenes in a row, you probably wouldn't leave and come back
+- Animation is a design tool
+	- big part of the future of web design
+	- if we don't use them we're going to be really behind
+- This is just the beginning
+- Motion Path Module Level 1
+- Web Animations API
+
+Kyle Simpson
+#CSS { Yawn: Yay! }
+- theories behind text templating
+- will get to css templating but start with html templating 
+- NOT the DOM
+- DOM is not portable
+- DOM is also not authored code
+- templating is also not "shortand" NOT:
+	- jade
+	- HAML
+	- markdown
+	- etc.
+- Templating is supposed to have your data external
+- templating doesn't require you to re-compile to output
+- templating - precompile and render
+- templating shouldn't be bound only to the server
+- what is it?
+- text only
+- generated
+- precompined
+- rendered
+- external data
+- hybrid (runs both front and back end)
+- tale of two cities
+	- logic-less templates
+		- moustache 
+		- have separations of concerns
+- logic-full templates
+	- PHP 
+		- with programming language inside of it
+		- violate separation of concerns
+	- handlebars
+	- Violate separation of concerns
+- Both of these extremes suck
+- something has to be in the middle
+- "grips" - http://getify.github.io/grips/
+	- allows you to do things you should example: simple loop
+	- but not what you shouldn't: exmaple: math
+- CSS preprocessors and their issues
+	- Math
+	- functions
+	- quickly slide towards programming in your CSS
+	- you shouldn't do these in your declarative CSS syntax
+- Good sides of CSS preprocessors
+	- maintenance
+	- better reuse
+	- less tedium
+		- prefixes, nesting etc
+- Cons
+	- too much logic
+		- math
+		- business
+		- function calls
+	- css preprocessors require you to recompile even if change one thing
+		- recompile code that is unnecessary
+	- not in JS
+		- stuck on server
+	- its a build-process only
+- What SHOULD be CSS templating?
+	- not: 
+		- a programming language
+	- pros of css template:
+		- maintenance
+		- reuse
+		- less tedium
+		- precompiled
+		- rendered
+		- externalised data
+		- hybrid (client/server)
+		- separated concerns
+	- CSS templating is more retrained
+- CSS templating is "just enough"
+- Constraint based layouts with css templating
+	- elements in relation to elements as opposed to its surrounding page
+- CSS templating == HTML templating
+- use cases?
+	- constraints based layout
+	- dynamic styles
+		- setting the css in javascript is duplicative
+		- why not rerender that snippit and inject
+	- client-side A/B testing
+	- responsive design
+	- client-specific CSS
+- grips-css
+	- https://gist.github.com/getify/4219122
+- CSS temptations:
+	- math
+	- colour
+	- operations
+	- etc
+- such CSS is just data operations
+	- should be in code
+- structural logic **does** belong in css
+- pipe all your templating through the same tool chain
+- css templating unlocks the real power of CSS tooling
+- https://speakerdeck.com/getify/number-css-yawn-yay
+
+Tim Kadlec
+In Between
+- He loves cartoons!
+- cartoons - looney toons in specific weren't afraid to be entirely un-lifelike
+	- went to extremes
+	- slapstick
+- warner bros
+	- even writers (not artists) drew sketches
+- Story Sketches
+	- even at this level - careful and crafted
+- Storyboard
+	- little more high fidelity
+	- 5x7 plastered on the wall
+- Character Layouts
+	- Timing, framing, sequencing, how long animation should last
+	- is where these were dictated
+- these cartoons were 24fps
+- to do would use
+- Extremes
+	- senior animator create the extremes and hand off to the "in-betweeners"
+- In-betweeners were low rung employees
+- craft your timing in animation - it is important
+-in-between moments shape perception
+- recognize the web has a 3rd access
+	- the Z access:
+	- Time
+		- everything takes time
+		- we're constantly moving
+		- our perception is altered based on how transitions take place
+		- its too bad we haven't taken more focus on them
+	- "Rub some dirt on it, you'll be fine"
+		- this is how we've used "progress" bars
+		- progress bars are not a solution, they are the hold music of the internet
+- Use Skeleton screens instead of progress bar/wheel
+	- grey boxes that simulate the content
+	- skeleton screens focus on the progress
+	- progress bars focus on the waiting
+	- focus on **what you're going to get**
+- Apple wants you to make "skeleton screens" on the splash screens
+	- "it's solely intended to enhance the user's perception of your app..."
+- Safari iOS
+- Animation provides many things
+- Eye candy (is a good thing, not bad)
+- people like beautiful things (!!!)
+- animation gives perception of performance
+- any delay over 100ms feels like lag
+- walmart - ever 100ms reduced in load time = 1% revenue increase
+- iOS safari brings pages up and lays over top so you know there's something behind it
+- use animations so you know where content is coming from, and where the other content has been left
+- eye candy
+- perceived performance
+- connection between states
+- deliberate in-between moments
+- example: travelocity
+	- lets user know what is happening
+- use animations to let your user know what is happening (!!!)
+- Tell people you're working for them (!!!)
+- feedback shows progress 
+- feedback helps ease anxiety
+- address anxiety
+	- be aware of what your users are anxious about and address them
+- **care**
+	- about the quality of user experience
+- in-between moments have to be meaningful
+- meaningful transitions - not just for the same of transitions
+- gradual reduction
+	- when starting to learn your application you can use longer durations
+	- as they get to know it you can shorten animations
+- a film slower at the beginning to ease audience into it - let them get to know what's going on
+- people prefer first content leaves fast, new content comes in slower with animations
+-  show a clear focus on the user
+- last few years we've talked more about performance
+- but we do focus on the numbers a lot
+	- these are important
+	- but it's also important we remember the reason we're doing these in the first place
+	- **reduce friction** for the user
+		- perceived performance in crucial
+- frustration impacts just as much if not more than the metrics we have been focusing on
+- it's not just a developer's job
+	- it's the job of everyone who touches the website
+- know how to use choreography on your site
+	- when to use animations or not
+	- know how to use it for a good feel
+- dropping frames is a bug
+- page transitions & new spec
+	- persistent elements
+	- they know they will stay there
+	- chrome dev summit video 
+- pay attention to motion design
+- "My current advice to UX/ Interface Designers: learn motion design."
+	- Cenny Bowels
+- a lot to learn from the traditional animation people
+- "the posture of a character is just as important as the words that they speak"
+- be deliberate in your use of animations
+- it's how we get there that really matters
+
+Paul Irish
+Browser Performance Tools
+Getting to fast
+The science behind the pageload flim flam
+- Performance! 
+- the web is p. dope
+- insta-feedback
+- but
+- discussions on performance and stuff
+- most people want fast, responsive, smooth navigation
+- 71% of people expect a page to load as fast or faster on their phone than their laptop
+- #1 thing to do for your website on mobile devices is to make it faster
+- there are no amount of gestures people can to do make it faster
+- 100ms gives feel of instantaneous response
+- 1000ms keeps user's flow of thought seamless
+- 10 seconds keeps the user's attention
+	- scope of people's attention
+- when put finger down - expect something in 100ms
+- animation in about 6ms
+- idle time we can do stuff
+- choosing the right performance budget
+	- goals and thresholds
+- potential budgets
+- The Speed Index
+	- like a film strip of your page loading
+	- charted representation
+	- how long it takes until get to the visual completeness the user expects to see
+- Speed index: the number of seconds to load the median pixel o the page
+	- best metric for establishing user perceived load of the page
+- Ilya
+	- measuring performance by the KB is like measuring the effectiveness of your diet by the lbs you eat.
+- not all requests are equal
+	- may or may not block
+	- not all bytes are made equal - first 14KB super important
+- Bandwidth: amount of data transferred over the network per unit time
+- Latency: delay in the network to transfer a packet
+- Last mile latency is slow
+- only bandwidth improves with faster internet - not latency
+- as bandwidth increases page load speed plateaus 
+	- because of latency
+- wireless "last mile" latency is, painful...
+- TCP is super slow
+	- handshake takes time
+	- only handles a little at a time
+	- 4 packet, 8 packet, 16 packet...
+		- at a time
+- latency becomes the bottleneck
+- latency defines speed of how the web loads
+- mobile growth means average latency goes up
+- What's a request worth?
+	- on 3G, a new 10k request equals ~100kb of concatenated content
+		- equal to this time
+- However this doesn't tell the whole story
+- Seeing the critical path
+	- bring to user experience
+- Load what the site exists for
+- show the content
+- use tools available
+- Google Web Fundamentals
+- Tim Kadlec Performance Budget Metrics
+- 4 categories:
+	- milestone timings
+	- speed index
+	- rule based metrics
+	- quantity based metrics
+- Recommended performance budget
+- milestone timing
+	- site specific
+- speed index: 2500 is good to be
+			 1000 is pro-level
+- get javascript out of the head
+- minimize render blocking css
+	- separate critical from non-critical 
+- visualise your performance wins
+	- show the difference in webpagetest or something
+- help your boss understand the impact
+	- when a user has a speed index under 1000, their conversion was X. Over 1000, their conversion was Y.
+- chrome dev tools animations speed change
+	- can go through animations with sliders in dev tools
+	- global animation playback speeds
+
